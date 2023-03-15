@@ -736,8 +736,8 @@ label {
   transition: all 0.4s ease 0s;
 }
 .service-hex .st0 {
-  stroke: #1e2530;
-  fill: #fff;
+  stroke: #cacdd3;
+  fill: #883eff;
 }
 .service-hex .st1 {
   fill: #1e2530;
@@ -1466,11 +1466,19 @@ label {
 }
 
 .d-pad .row {
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
   height: 150px;
-  background-color: #86a438;
 }
 
 .d-pad .col {
-  background-color: #02b7ce;
-  vertical-align: middle;
+  /* background-color: #0212ce; */
+  text-align: center;
+  height: 100%;
 }
+
+/* .d-pad {
+  width: 100%;
+  height: 100%;
+} */
