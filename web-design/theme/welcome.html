@@ -21,114 +21,188 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 <!DOCTYPE html>
 <html lang="zxx">
-<head>
+  <head>
+    <!-- ** Basic Page Needs ** -->
+    <meta charset="utf-8" />
+    <title>Phantom - Bootstrap Portfolio Template</title>
 
-  <!-- ** Basic Page Needs ** -->
-  <meta charset="utf-8">
-  <title>Phantom - Bootstrap Portfolio Template</title>
+    <!-- ** Mobile Specific Metas ** -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Portfolio HTML Template" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <meta name="author" content="Themefisher" />
+    <meta
+      name="generator"
+      content="Themefisher Html5 Portfolio Template v1.0"
+    />
 
-  <!-- ** Mobile Specific Metas ** -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Portfolio HTML Template">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="author" content="Themefisher">
-  <meta name="generator" content="Themefisher Html5 Portfolio Template v1.0">
+    <!-- Essential Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800"
+    />
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="plugins/animate.css" />
+    <link rel="stylesheet" href="plugins/slick/slick.css" />
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css" />
+    <link
+      rel="stylesheet"
+      href="plugins/themefisher-fonts/css/themefisher-fonts.min.css"
+    />
 
-  <!-- Essential Stylesheets -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800">
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="plugins/animate.css">
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-  <link rel="stylesheet" href="plugins/themefisher-fonts/css/themefisher-fonts.min.css">  
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  
-  <!-- Theme Stylesheet -->
-  <link rel="stylesheet" href="#" id="color-changer">
-  
-  <!--Favicon-->
-  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <!-- Theme Stylesheet -->
+    <link rel="stylesheet" href="#" id="color-changer" />
 
-</head>
-<body><!-- set class="dark" on body tag for DARK-THEME -->
+    <!--Favicon-->
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- set class="dark" on body tag for DARK-THEME -->
 
-  <div class="preloader">
-    <div class="loading-mask"></div>
-    <div class="loading-mask"></div>
-    <div class="loading-mask"></div>
-    <div class="loading-mask"></div>
-    <div class="loading-mask"></div>
-  </div>
-
-  <div class="preview-wrapper">
-    <div class="switcher-head">
-      <span>Style Switcher</span>
-      <div class="switcher-trigger tf-tools"></div>
+    <div class="preloader">
+      <div class="loading-mask"></div>
+      <div class="loading-mask"></div>
+      <div class="loading-mask"></div>
+      <div class="loading-mask"></div>
+      <div class="loading-mask"></div>
     </div>
 
-    <div class="switcher-body">
-      <h4>Choose Color:</h4>
-      <ul class="color-options list-none">
-        <li class="c0" data-color="red" title="Default">Default</li>
-        <li class="c1" data-color="blue" title="Red">Red</li>
-        <li class="c2" data-color="green" title="Green">Green</li>
-        <li class="c3" data-color="yellow" title="Blue">Blue</li>
-      </ul>
-    </div>
-  </div>
-
-<main class="site-wrapper">
-  <div class="pt-table">
-    <div class="pt-tablecell page-welcome relative">
-      <!-- .close -->
-      <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
-      <!-- /.close -->
-
-      <div class="author-image-large">
-        <img src="images/author.png" alt="">
+    <div class="preview-wrapper">
+      <div class="switcher-head">
+        <span>Style Switcher</span>
+        <div class="switcher-trigger tf-tools"></div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-6 col-lg-7">
-            <div class="page-title">
-              <h2>David <span class="primary">ramon</span> <span class="title-bg">About</span></h2>
-              <p>A product designer from England, who focuses on interactive design & A freelance designer focusing on typography & clean interfaces. Also works in dignissimos non quos Google..</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores repellendus corporis, tenetur inventore perferendis reprehenderit autem dignissimos non quos unde eveniet sapiente necessitatibus consequuntur ea ab dolore.</p>
-            </div>
-          </div>
-        </div> <!-- /.row -->
-      </div> <!-- /.container -->
-
-      <nav class="page-nav clear">
-  <div class="container">
-    <div class="flex flex-middle space-between">
-      <span class="prev-page"><a href="index.html" class="link">&larr; Prev Page</a></span>
-      <span class="copyright">Copyright &copy; 2021, Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a>.</span>
-      <span class="next-page"><a href="about.html" class="link">Next Page &rarr;</a></span>
+      <div class="switcher-body">
+        <h4>Choose Color:</h4>
+        <ul class="color-options list-none">
+          <li class="c0" data-color="red" title="Default">Default</li>
+          <li class="c1" data-color="blue" title="Red">Red</li>
+          <li class="c2" data-color="green" title="Green">Green</li>
+          <li class="c3" data-color="yellow" title="Blue">Blue</li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <!-- /.page-nav -->
-</nav>
-      <!-- /.container -->
 
-    </div> <!-- /.pt-tablecell -->
-  </div> <!-- /.pt-table -->
-</main> <!-- /.site-wrapper -->
+    <main class="site-wrapper">
+      <div class="pt-table">
+        <div
+          class="pt-tablecell page-home relative"
+          style="background-image: url('images/banner.jpg')"
+        >
+          <!-- .close -->
+          <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
+          <!-- /.close -->
+          <div class="overlay"></div>
+          <!-- <div class="author-image-large">
+            <img src="images/author.png" alt="" />
+          </div> -->
 
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="page-title text-center">
+                  <h2>
+                    Control The <span class="primary">mdXplorer</span>
+                    <span class="title-bg">mdXplorer</span>
+                  </h2>
+                </div>
+              </div>
+            </div>
 
-<!-- 
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <div class="container-fluid">
+                  <img
+                    style="width: auto; height: 195px"
+                    src="./images/banner.jpg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-md-6">
+                <div class="container-fluid d-pad">
+                  <div class="content">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4 col">1</div>
+                      <div class="col-xs-12 col-sm-4 col">2</div>
+                      <div class="col-xs-12 col-sm-4 col">3</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4 col">4</div>
+                      <div class="col-xs-12 col-sm-4 col">5</div>
+                      <div class="col-xs-12 col-sm-4 col">6</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4 col">7</div>
+                      <div class="col-xs-12 col-sm-4 col">8</div>
+                      <div class="col-xs-12 col-sm-4 col">9</div>
+                    </div>
+                  </div>
+                  <div class="d-pad-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="100%"
+                      height="100%"
+                      fill="currentColor"
+                      class="bi bi-dpad"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="m7.788 2.34-.799 1.278A.25.25 0 0 0 7.201 4h1.598a.25.25 0 0 0 .212-.382l-.799-1.279a.25.25 0 0 0-.424 0Zm0 11.32-.799-1.277A.25.25 0 0 1 7.201 12h1.598a.25.25 0 0 1 .212.383l-.799 1.278a.25.25 0 0 1-.424 0ZM3.617 9.01 2.34 8.213a.25.25 0 0 1 0-.424l1.278-.799A.25.25 0 0 1 4 7.201V8.8a.25.25 0 0 1-.383.212Zm10.043-.798-1.277.799A.25.25 0 0 1 12 8.799V7.2a.25.25 0 0 1 .383-.212l1.278.799a.25.25 0 0 1 0 .424Z"
+                      />
+                      <path
+                        d="M6.5 0A1.5 1.5 0 0 0 5 1.5v3a.5.5 0 0 1-.5.5h-3A1.5 1.5 0 0 0 0 6.5v3A1.5 1.5 0 0 0 1.5 11h3a.5.5 0 0 1 .5.5v3A1.5 1.5 0 0 0 6.5 16h3a1.5 1.5 0 0 0 1.5-1.5v-3a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 0 16 9.5v-3A1.5 1.5 0 0 0 14.5 5h-3a.5.5 0 0 1-.5-.5v-3A1.5 1.5 0 0 0 9.5 0h-3ZM6 1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3A1.5 1.5 0 0 0 11.5 6h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a1.5 1.5 0 0 0-1.5 1.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-3A1.5 1.5 0 0 0 4.5 10h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 0 6 4.5v-3Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container -->
+
+          <nav class="page-nav clear">
+            <div class="container">
+              <div class="flex flex-middle space-between">
+                <span class="prev-page"
+                  ><a href="index.html" class="link">&larr; Prev Page</a></span
+                >
+                <span class="copyright"
+                  >Copyright &copy; 2021, Designed &amp; Developed by
+                  <a href="https://themefisher.com/">Themefisher</a>.</span
+                >
+                <span class="next-page"
+                  ><a href="about.html" class="link">Next Page &rarr;</a></span
+                >
+              </div>
+            </div>
+            <!-- /.page-nav -->
+          </nav>
+          <!-- /.container -->
+        </div>
+        <!-- /.pt-tablecell -->
+      </div>
+      <!-- /.pt-table -->
+    </main>
+    <!-- /.site-wrapper -->
+
+    <!-- 
 Essential Scripts
 =====================================-->
-<script src="plugins/jquery-2.2.4.min.js"></script>
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<script src="plugins/jquery.nicescroll.min.js"></script>
-<script src="plugins/isotope/isotope.pkgd.min.js"></script>
-<script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/jquery-2.2.4.min.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="plugins/jquery.nicescroll.min.js"></script>
+    <script src="plugins/isotope/isotope.pkgd.min.js"></script>
+    <script src="plugins/slick/slick.min.js"></script>
 
-<script src="js/script.js"></script>
-
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
