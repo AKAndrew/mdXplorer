@@ -1,49 +1,57 @@
-
 #include <IRremote.h>
-
 #define irPin 7
-
+#define m1 6
+#define m2 9
+#define m3 10
+#define m4 11
 IRrecv irrecv(irPin);
 decode_results results;
- 
+unsigned int lastfunc=0;
 void setup() {
-  pinMode(8,OUTPUT);
-  pinMode(9,OUTPUT);
-  pinMode(10,OUTPUT);
-  pinMode(11,OUTPUT);
+  pinMode(m1,OUTPUT);
+  pinMode(m2,OUTPUT);
+  pinMode(m3,OUTPUT);
+  pinMode(m4,OUTPUT);
   
   Serial.begin(9600);
   irrecv.enableIRIn();
 }
  
 void loop() {
-  
    if (irrecv.decode(&results)) {
       Serial.println(results.value);
-      
       switch (results.value) {
-        
-         case 16736925:            // button 2 FORDWARD
+         case 16736925:            // button Vol+ FORDWARD
             forward();
             break;
-
-         case 16720605:            // button 4 LEFT
+         case 16720605:            // << LEFT
             left();
             break;
-               
-         case 16712445:            // button 5 STOP
+         case 16712445:            // >|| STOP
             Stop();
             break;
-
-         case 16761405 :            // button 6 RIGHT
+         case 16761405 :            // >> RIGHT
             right();
             break;
- 
-         case 16754775:            // button 8 BACK
+         case 16754775:            // Vol- BACK
             back();
             break;
- 
-         
+         case 4294967295:
+          switch(lastfunc){
+            case 1:
+              forward();
+              break;
+            case 2:
+              left();
+              break;
+            case 3:
+              right();
+              break;
+            case 4:
+              back();
+              break;
+          }
+         break;
          }      
    irrecv.resume();
    }
@@ -51,45 +59,57 @@ void loop() {
 
 void forward()
 {
+  lastfunc = 1;
   Serial.println("forward");
-            digitalWrite(8, HIGH);
-            digitalWrite(9, LOW);
-            digitalWrite(10, HIGH);
-            digitalWrite(11, LOW);
+    digitalWrite(m1, HIGH);
+    digitalWrite(m2, LOW);
+    digitalWrite(m3, HIGH);
+    digitalWrite(m4, LOW);
+    delay(500);
+    Stop();
 }
 
 void back()
 {
+  lastfunc = 4;
   Serial.println("back");
-              digitalWrite(8, LOW);
-              digitalWrite(9, HIGH);
-              digitalWrite(10, LOW);
-              digitalWrite(11, HIGH);
+    digitalWrite(m1, LOW);
+    digitalWrite(m2, HIGH);
+    digitalWrite(m3, LOW);
+    digitalWrite(m4, HIGH);
+    delay(500);
+    Stop();
 }
 
 void left()
 {
+  lastfunc = 2;
   Serial.println("left");
-            digitalWrite(8, LOW);
-            digitalWrite(9, HIGH);
-            digitalWrite(10, HIGH);
-            digitalWrite(11, LOW);
+    digitalWrite(m1, LOW);
+    digitalWrite(m2, HIGH);
+    digitalWrite(m3, HIGH);
+    digitalWrite(m4, LOW);
+    delay(250);
+    Stop();
 }
 
 void right()
 {
-  Serial.println("right");
-              digitalWrite(8, HIGH);
-              digitalWrite(9, LOW);
-              digitalWrite(10, LOW);
-              digitalWrite(11, HIGH);
+  lastfunc = 3;
+  Serial.println("right");  
+    digitalWrite(m1, HIGH);
+    digitalWrite(m2, LOW);
+    digitalWrite(m3, LOW);
+    digitalWrite(m4, HIGH);
+    delay(250);
+    Stop();
 } 
 
 void Stop()
 {
   Serial.println("stop");
-            digitalWrite(8, LOW);
-            digitalWrite(9, LOW);
-            digitalWrite(10, LOW);
-            digitalWrite(11, LOW);
+    digitalWrite(m1, LOW);
+    digitalWrite(m2, LOW);
+    digitalWrite(m3, LOW);
+    digitalWrite(m4, LOW);
 }
