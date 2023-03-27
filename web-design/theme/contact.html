@@ -191,12 +191,12 @@ FACEBOOK: https://www.facebook.com/themefisher
                 <div class="col-xs-12 col-sm-12">
                   <div class="input-field">
                     <span class="btn-border">
-                      <button type="submit" class="btn btn-primary btn-custom-border text-uppercase">Send Message
+                      <button type="submit" class="btn btn-primary btn-custom-border text-uppercase" name="submit">Send Message
                         now</button>
                     </span>
                   </div>
-                  <div class="msg-success">Your Message was sent successfully</div>
-                  <div class="msg-failed">Something went wrong, please try again later</div>
+                  <div class="msg-success">Your Message was sent successfully!</div>
+                  <div class="msg-failed">Something went wrong, please try again later!</div>
                 </div> <!-- ./col- -->
               </form> <!-- /.row -->
             </div> <!-- /.col- -->
@@ -226,6 +226,23 @@ Essential Scripts
 <script src="plugins/jquery.nicescroll.min.js"></script>
 <script src="plugins/isotope/isotope.pkgd.min.js"></script>
 <script src="plugins/slick/slick.min.js"></script>
+<script>
+const hash = location.hash.substr(1);
+if(hash === "success"){
+	document.querySelector(".msg-success").style.display='flex';
+	document.querySelector(".msg-failed").style.display='none';
+}
+else {
+	if(hash === "failed"){
+		document.querySelector(".msg-success").style.display='none';
+		document.querySelector(".msg-failed").style.display='flex';
+	}
+	else {
+		document.querySelector(".msg-success").style.display='none';
+		document.querySelector(".msg-failed").style.display='none';
+	}
+}
+</script>
 
 <script src="js/script.js"></script>
 
