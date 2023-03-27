@@ -11,8 +11,10 @@
 
 #include "camera_pins.h"
 
-const char* ssid     = "VM7992521";   //input your wifi name
-const char* password = "yj6MxtspL5xk";   //input your wifi passwords
+//const char* ssid     = "VM7992521";   //input your wifi name
+//const char* password = "yj6MxtspL5xk";   //input your wifi passwords
+
+const char* ssid     = "mdXplorer";   //input your wifi name
 
 void startCameraServer();
 
@@ -66,7 +68,8 @@ void setup() {
   // drop down frame size for higher initial frame rate
   s->set_framesize(s, FRAMESIZE_VGA);
 
-  WiFi.begin(ssid, password);
+  //WiFi.begin(ssid, password);
+  WiFi.begin(ssid);
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
