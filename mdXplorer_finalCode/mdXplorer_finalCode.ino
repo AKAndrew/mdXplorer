@@ -9,8 +9,12 @@
 IRrecv irrecv(irPin);
 decode_results results;
 CRGB leds[NUM_LEDS];
-int light, lightraw;
+int light, lightraw, data, cmd;
 unsigned int lastfunc=0;
+bool newData;
+
+int LED=13; //builtin LED
+bool LEDval=0;
 
 void setup() {
   FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
@@ -21,13 +25,66 @@ void setup() {
   pinMode(10,OUTPUT);
   pinMode(11,OUTPUT);
  
-  Serial.begin(9600);
+  Serial.begin(115200);
+  Serial.setTimeout(1);
   irrecv.enableIRIn();
-}
- 
-void loop() {
 
-    lightraw = analogRead(phr);
+  pinMode(LED,OUTPUT);
+}
+
+
+ 
+void loop() {  
+  while (Serial.available()){
+    data = Serial.read();
+    // if we read 'return carrier' or 'newline'
+    if(data == 13 || data == 10)
+      // end of line, flush buffer
+      flushserial();
+    else
+      cmd = data;
+    // mark a new command was received
+    newData = 1;
+  }
+
+  if(newData){
+    newData = 0;
+    switch(cmd){
+      case '0':
+        LEDval = 0;
+        break;
+      case '1':
+        LEDval = 1;
+        break;
+      case '2':
+        forward();
+        Serial.println("fwd");
+        break;
+      case '4':
+        left();
+        Serial.println("left");
+        break;
+      case '5':
+        Stop();
+        Serial.println("stop");
+        break;
+      case '6':
+        right();
+        Serial.println("right");
+        break;
+      case '8':
+        back();
+        Serial.println("bkwd");
+        break;
+      default:
+        LEDval = !LEDval;
+        Serial.println("unkown");
+        break;
+    }
+    digitalWrite(LED, LEDval);
+  }
+
+  lightraw = analogRead(phr);
   if(lightraw < 100)
     light = map(lightraw, 100, 0, 0, 255);
   else light = 0;
@@ -77,6 +134,11 @@ void loop() {
    irrecv.resume();
    }
    delay(100);
+}
+
+void flushserial(){
+  while(Serial.available() > 0)
+    char tmp = Serial.read();
 }
 
 void forward()
