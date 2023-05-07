@@ -16,5 +16,5 @@ if(isset($_POST['submit'])){
 		header('Location: contact.html#success');
 	else
 		header('Location: contact.html#failed');
-}
+}// else return;
 ?>

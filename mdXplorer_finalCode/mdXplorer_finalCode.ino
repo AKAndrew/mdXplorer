@@ -13,8 +13,7 @@ int light, lightraw, data, cmd;
 unsigned int lastfunc=0;
 bool newData;
 
-int LED=13; //builtin LED
-bool LEDval=0;
+int LED=13; bool LEDval=0;
 
 void setup() {
   FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
@@ -37,13 +36,10 @@ void setup() {
 void loop() {  
   while (Serial.available()){
     data = Serial.read();
-    // if we read 'return carrier' or 'newline'
     if(data == 13 || data == 10)
-      // end of line, flush buffer
       flushserial();
     else
       cmd = data;
-    // mark a new command was received
     newData = 1;
   }
 

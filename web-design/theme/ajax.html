@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Test</title>
+</head>
+<body>
+	<div id="output"><i>	Here will be the PHP retun</i></div>
+	<button value='up'>up</button>
+	<button value='left'>left</button>
+	<button value='right'>right</button>
+	<button value='down'>down</button>
+	<button value=''>none</button>
+  
+	<script>
+    // Find all buttons on the page
+    const buttons = document.querySelectorAll('button');
+
+    // Loop through the buttons and add a click event listener to each one
+    buttons.forEach(button => {
+      button.addEventListener('click', event => {
+        cmd = event.target.value;
+		console.log(`Button ${cmd} clicked!`);
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200)
+			document.getElementById("output").innerHTML = this.responseText;
+		};
+		xmlhttp.open("GET", "sendcommand.php?cmd='" + event.target.value + "'", true);
+		xmlhttp.send();
+	  });
+	});
+    </script>
+</body>
+</html>
